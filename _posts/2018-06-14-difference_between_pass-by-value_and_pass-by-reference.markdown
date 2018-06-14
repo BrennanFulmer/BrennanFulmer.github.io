@@ -13,7 +13,7 @@ def fork_found?(board)
 	fake = board
 	fake.each_with_index { |spot, index|
 		if spot == ' '
-		fake[index] = 'X'
+			fake[index] = 'X'
 ```
 
 <p> This code snippet is from the Tic Tac Toe with AI project. I was writing a method so that the computer's AI would be able to detect forks by testing random moves on a seperate copy of the board array. What initially eluded me though was why this kept resulting in an X being added to the board even when the computer player was assigned O. Upon doing some research I realized that while Ruby is pass-by-value its more nuanced than that. 
