@@ -22,7 +22,7 @@ def fork_found?(board)
 </p>
 <p> Getting back to my example though, if Ruby is pass-by-value this should have worked right? The complication is that in Ruby variable values are references so a more accurate descrition of how it handles parameter passing would be pass-by-value-reference. The underlying reason behind this contradiction has to do with how these different approaches store data in memory.
 </p>
-<p> In pass-by-value when a function is called with variable(s) it copies their value somewhere else into memory and since these different memory blocks aren't connected any modifications aren't communicated. In pass-by-reference a variable's value is only ever stored in one memory location so any changes made have to affect every variable with said value. 
+<p> In pass-by-value when a function is called with a variable(s) it copies the value somewhere else into memory and since these different memory blocks aren't connected any modifications aren't communicated. In pass-by-reference a variable's value is only ever stored in one memory location so any changes made have to affect every variable with said value. 
 </p>
 <p> However in what I'm calling Ruby's pass-by-value-reference a value is only ever stored in one memory location but different variables have different nicknames for it. Even though those nicknames differ since the overall value in memory they refer to is the same any changes made to that value on one variable affect all variables (with the same value). 
 </p>
