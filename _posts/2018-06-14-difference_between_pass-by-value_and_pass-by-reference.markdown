@@ -1,6 +1,6 @@
 ---
 layout: post
-title:      "Difference between pass-by-value and pass-by-reference"
+title:      "Main difference between pass-by-value and pass-by-reference"
 date:       2018-06-14 15:15:58 -0400
 permalink:  difference_between_pass-by-value_and_pass-by-reference
 ---
