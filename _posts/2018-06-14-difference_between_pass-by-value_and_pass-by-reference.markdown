@@ -1,6 +1,6 @@
 ---
 layout: post
-title:      "Main difference between pass-by-value and pass-by-reference"
+title:      "Main Difference Between Pass-By-Value And Pass-By-Reference"
 date:       2018-06-14 15:15:58 -0400
 permalink:  difference_between_pass-by-value_and_pass-by-reference
 ---
@@ -16,7 +16,7 @@ def fork_found?(board)
 			fake[index] = 'X'
 ```
 
-<p> This code snippet is from the Tic Tac Toe with AI project. I was writing a method so that the computer's AI would be able to detect forks by testing random moves on a seperate copy of the board array. What initially eluded me though was why this kept resulting in an X being added to the board even when the computer player was assigned O. Upon doing some research I realized that while Ruby is pass-by-value its more nuanced than that. 
+<p> This code snippet is from the Tic Tac Toe with AI project. I was writing a method so that the computer's AI would be able to detect forks by testing random moves on a seperate copy of the board array. What initially eluded me though was why this kept resulting in an X being added to the board even when the computer player was assigned O. I eventually figured out that I wasn't making a seperate copy of the board, but why? This lead me to look deeper into how Ruby works and to discover that while its technically pass-by-value its more nuanced than that.
 </p>
 <p> In pass-by-value languages when a function is called with a variable the function just gets a copy of the variable's value to work with so any changes made don't impact the original variable. As you would expect pass-by-reference then means that variables are treated as references to a value instead of a value in and of themselves. So in practice when passed a variable the changes functions make directly affect the original variable because the same value it references are being operated upon. 
 </p>
