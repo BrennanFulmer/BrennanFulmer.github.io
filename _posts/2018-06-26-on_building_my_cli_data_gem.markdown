@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "On Building My CLI Data Gem"
-date:       2018-06-26 05:46:19 +0000
+date:       2018-06-26 01:46:20 -0400
 permalink:  on_building_my_cli_data_gem
 ---
 
@@ -18,12 +18,9 @@ permalink:  on_building_my_cli_data_gem
 
 <p> Creating the CLI was the catalyst for change in my process. I got fed up with trying to split every possible action into seperate methods and the code I wrote to make Scraper small was difficult for even me to read. Luckily in a technical one on one Dakota explained to me that single responsibility principle doesn't mean you have to have one method to display options to the user, one to validate, and one to act on their input but that if the code to handle this interaction won't be repeated in can be in a single function. As long as this function doesn't handle anything else. We also went through my Scraping class code and the best solution he could come up with is splitting the list and movie scrapes out into seperate methods. </p>
 
-<p> This reinvigorated me and freed me from the trap I had created. As I worked through filling out the CLI I got over trying to make my original vision work and cut the amount of information I was scraping in half. This allowed me to refactor the project significantly and to refocus on creating the minimum viable product. 
+<p> This reinvigorated me and freed me from the trap I had created. As I worked through filling out the CLI I got over trying to make my original vision work and cut the amount of information I was scraping in half. This allowed me to refactor the project significantly and to refocus on creating the minimum viable product. </p>
 
->>> potentially remove this later <<<
-
-At the time of this writing I currently need to finish testing the CLI to call the programming part of the project done, but all of my connections to Rotten Tomatoes are timing out so I may be getting blocked. 
-We'll see </p>
+<p> Overall I would say this was a positive yet very stressful experience. It illuminated a number of bad habits I need to work on and was a great lesson about how programming is more than just being able to code. I know see that how much to code is just as important as what and how. </p>
 
 
 
