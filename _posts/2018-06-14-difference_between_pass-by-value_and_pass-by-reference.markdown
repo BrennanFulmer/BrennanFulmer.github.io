@@ -10,10 +10,10 @@ I'll start with the recent example that finally crystallized this concept for me
 
 ```
 def fork_found?(board)
-	fake = board
-	fake.each_with_index { |spot, index|
-		if spot == ' '
-			fake[index] = 'X'
+ fake = board
+ fake.each_with_index { |spot, index|
+  if spot == ' '
+   fake[index] = 'X'
 ```
 
 <p> This code snippet is from the Tic Tac Toe with AI project. I was writing a method so that the computer's AI would be able to detect forks by testing random moves on a seperate copy of the board array. What initially eluded me though was why this kept resulting in an X being added to the board even when the computer player was assigned O. I eventually figured out that I wasn't making a seperate copy of the board, but why? This lead me to look deeper into how Ruby works and to discover that while its technically pass-by-value its more nuanced than that.
