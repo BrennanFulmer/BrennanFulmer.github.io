@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Tricks For Writing Shorter And More Readable Code In Ruby"
-date:       2018-07-18 19:20:18 +0000
+date:       2018-07-18 15:20:18 -0400
 permalink:  tricks_for_writing_shorter_and_more_readable_code_in_ruby
 ---
 
@@ -10,11 +10,11 @@ permalink:  tricks_for_writing_shorter_and_more_readable_code_in_ruby
 
 ```
 def winner
-	 combo = won?
+ combo = won?
 
-		if combo
-			board.cells[  combo[0]  ] 
-		end
+ if combo
+  board.cells[  combo[0]  ] 
+ end
 end
 ```
 
@@ -22,7 +22,7 @@ end
 
 ```
 def winner
-	 if combo = won? then board.cells[ combo[0] ] end
+ if combo = won? then board.cells[ combo[0] ] end
 end
 ```
 
@@ -32,22 +32,22 @@ end
 
 ```
 def play
-    turn until over?
-    
-		if winner
-		  puts "Congratulations #{winner}!" 
-		else
-		  puts "Cat's Game!"
-		end
+ turn until over?
+
+ if winner
+  puts "Congratulations #{winner}!" 
+ else
+  puts "Cat's Game!"
+ end
 end
 ```
 
 <p> The IF statement at the bottom of the play method above is going to puts a phrase no matter what and the logic is so simple that its needlessly long. By combining the ternary operator and the fact that puts knows how to process a methods return value you can shorten the method into just this. </p>
 
 ```
-  def play
-    turn until over?
-    puts winner ? "Congratulations #{winner}!" : "Cat's Game!"
+def play
+ turn until over?
+ puts winner ? "Congratulations #{winner}!" : "Cat's Game!"
 end
 ```
 
@@ -57,11 +57,11 @@ end
 
 ```
 def set_enemy_token
-  if @player_token == 'O'
-	  @enemy_token = 'X'
-	else 
-	  @enemy_token = 'O'
-	end
+ if @player_token == 'O'
+  @enemy_token = 'X'
+ else 
+  @enemy_token = 'O'
+ end
 end
 ```
 
@@ -69,7 +69,7 @@ end
 
 ```
 def set_enemy_token
-  @enemy_token = @player_token == 'O' ? 'X' : 'O'
+ @enemy_token = @player_token == 'O' ? 'X' : 'O'
 end
 ```
 
