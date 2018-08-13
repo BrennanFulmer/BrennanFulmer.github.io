@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "The Experience Of Making Book Writer, My Sinatra Project"
-date:       2018-08-09 08:42:15 +0000
+date:       2018-08-09 04:42:16 -0400
 permalink:  the_experience_of_making_book_writer_my_sinatra_project
 ---
 
@@ -19,6 +19,8 @@ permalink:  the_experience_of_making_book_writer_my_sinatra_project
 <p> After finishing the Chapter views and routes I started on the problems Dakota and I had noticed. I added validations to models so they would enforce length and content specifications. I went through and updated my routes to be RESTful, and in doing so broke all my helpful links. Despite my intial objections to a navigation bar due to needing some CSS for even the most basic (I wasn't sure how to properly add CSS in a Sinatra project and was concerned with the potential time increase it could create if the temptation to include it elsewhere struck but Dakota had talked me out of this), I added one. This allowed me to quickly delete the old bad links the views had and more easily add relevant links to the pages that didn't have them. </p>
 
 <p> After making it so that deleting a book deletes all associated chapters I started testing bad user inputs. Initially I panicked because both the ones in my forms and models didn't seem to be functioning. I learned that HTML form pattern matching doesn't prevent bad data from being typed in, it only blocks form submission. Also the pattern attribute I was using for form validation isn't compatible with HTML input type number, so I reverted the form fields I switched back to text type. As for the models, directly modifying a value doesn't trigger ActiveRecord validation. Only the Create, Save, and Update methods do. After making the necessary validation updates I went though and added logic to handle the different user mistakes. This includes looking up books, chapters, or a user that don't exist or trying to perform an action that requires authentication or being the author when you're not. </p>
+
+<p> While recording the walkthrough I ended up discovering more problems. The biggest being the my chapter views where using ActiveRecord's find_by method on ordinal's but that meant they could find a chapter for another book if the ordinal is missing or just if there's a chapter with a lower ID and the same ordinal. To fix this I created a custom method that uses a books chapters for its search target but still uses ordinals as the search term. Then I went through and turned all my repeated logic for handling bad user inputs (non-existent book or chapters, not being logged in, already being logged in, trying to change a resource that isn't your own) with helper methods. This is another one of those things that would have been extremely beneficial had I known about it sooner. At this point I was finally unable to fail any tests I ran. </p>
 
 <p> I must say while I currently don't plan on improving and adding to this project like most of my previous end of unit assignments in the past. I do appreciate the reminder of the importance to having a viable system for completing a software project. Its fairly obvious but I don't think we'd have any major website we do today if their creators started by trying to create the current version of Facebook or Amazon. Hopefully going forward I'll remember both this and to properly plan out projects so these posts can be more about postive things I did than major gotchas. </p>
 
